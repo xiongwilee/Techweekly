@@ -1,0 +1,14 @@
+{
+  "name": "crawler",
+  "main": "eagle.js",
+  "version": "1.0.0",
+  "license": "ISC",
+  "scripts": {
+    "dev": "npm install"
+  },
+  "dependencies": {
+    "cheerio": "0.20.0",
+    "nodemailer": "^2.3.0",
+    "request": "^2.69.0"
+  }
+}
