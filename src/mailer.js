@@ -6,6 +6,12 @@ const nodemailer = require("nodemailer");
 let smtpTransport;
 
 
+/**
+ * 发送邮件
+ * @param  {Object} mailConfig 邮箱配置
+ * @param  {String} html       邮件内容
+ * @return {Undefined}
+ */
 function sendMail(mailConfig, html) {
   smtpTransport = smtpTransport || nodemailer.createTransport(mailConfig.sender);
 

@@ -5,10 +5,14 @@ const path = require("path");
 const http = require("http");
 const urlModel = require("url");
 
-const cheerio = require("cheerio");
 const request = require("request");
 
-
+/**
+ * 通过文章列表配置和爬虫获取到每周技术内容，生成html
+ * @param  {Object}   articleConfig  文章列表配置
+ * @param  {Function} callback      回调函数
+ * @return {Undefined}
+ */
 function crawler(articleConfig, callback) {
   let promiseAll = allArticle(articleConfig);
 
@@ -43,6 +47,11 @@ function crawler(articleConfig, callback) {
   })
 }
 
+/**
+ * 通过articleList获取HTML片段
+ * @param  {Array} contentList 获取到的文章列表
+ * @return {String}             生成的HTML内容
+ */
 function getMailHtml(contentList) {
   let htmlContent = '';
   contentList.forEach((article) => {
