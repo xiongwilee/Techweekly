@@ -7,7 +7,6 @@ const urlModel = require("url");
 
 const cheerio = require("cheerio");
 const request = require("request");
-const async = require("async");
 
 
 function crawler(articleConfig, callback) {
