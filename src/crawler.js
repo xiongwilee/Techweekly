@@ -59,13 +59,13 @@ function getMailHtml(contentList) {
   })
 
   htmlContent += `<p>——————————————————————————————————————————————————</p>
-    <p>该技术周报由<a href='https://github.com/zdz1993/crawler'>crawler</a>强力驱动</p>`;
+    <p>该技术周报由<a href='https://github.com/xiongwilee/Techweekly'>Techweekly</a>强力驱动</p>`;
 
   return htmlContent
 }
 
 /**
- * 通过列表页的连接，获取真实的URL
+ * 通过页面连接获取文档内容的HTML
  * @param  {Object} article 文档列表页
  * @return {Object}         Promise
  */
@@ -85,7 +85,7 @@ function getContentPromise(article) {
 }
 
 /**
- * 获取所有文档页面的所有页面内容
+ * 获取所有文档列表页面的页面HTML
  * @param  {Object}   articleConfig 文章列表配置
  * @return {Obejct}                 Promise
  */

@@ -22,7 +22,7 @@ function sendMail(mailConfig, html) {
     html: html
   }, (error, response) => {
     if (error) {
-      console.log("error:" + error);
+      console.error(error);
     } else {
       console.log(response);
     }

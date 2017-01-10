@@ -1,13 +1,18 @@
+/**
+ * 邮箱配置文件
+ * @author xiongwilee
+ */
+
 module.exports = {
   "sender": {
     "host": "smtp.163.com",
     "port": 465,
     "auth": {
       "user": "wileetest04@163.com",
-      "pass": "wileetest"
+      "pass": "123qwe"
     }
   },
-  "subject": "FE-文章推荐",
-  "from": "趣店前端团队 <fe_warn@qudian.com>",
-  "to": ["xiongweilie@qudian.com"]
+  "subject": "每周技术文章推荐",
+  "from": "xiongwilee <wileetest04@163.com>",
+  "to": ["xiongwilee@foxmail.com"]
 }

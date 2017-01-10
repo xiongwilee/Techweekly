@@ -1,14 +1,30 @@
 {
-  "name": "crawler",
-  "main": "eagle.js",
+  "name": "techweekly",
   "version": "1.0.0",
-  "license": "ISC",
-  "scripts": {
-    "dev": "npm install"
-  },
+  "description": "每周技术文章推荐爬虫工具",
+  "main": "index.js",
   "dependencies": {
-    "cheerio": "0.20.0",
-    "nodemailer": "^2.3.0",
-    "request": "^2.69.0"
-  }
+    "request": "^2.79.0",
+    "cheerio": "^0.20.0",
+    "nodemailer": "^2.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiongwilee/tech-weekly-crawler.git"
+  },
+  "keywords": [
+    "tech",
+    "weekly",
+    "crawler"
+  ],
+  "author": "xiongwilee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiongwilee/tech-weekly-crawler/issues"
+  },
+  "homepage": "https://github.com/xiongwilee/tech-weekly-crawler#readme"
 }

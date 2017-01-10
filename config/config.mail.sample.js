@@ -1,3 +1,8 @@
+/**
+ * 邮箱配置案例
+ * @author xiongwilee
+ */
+
 module.exports = {
   "sender": {
     "host": "smtp.163.com",
