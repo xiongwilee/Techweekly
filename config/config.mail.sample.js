@@ -1,13 +1,13 @@
 module.exports = {
   "sender": {
-    "host": "smtp.exmail.qq.com",
+    "host": "smtp.163.com",
     "port": 465,
     "auth": {
-      "user": "***",
-      "pass": "***"
+      "user": "wileetest04@163.com",
+      "pass": "123qwe"
     }
   },
-  "subject": "FE-文章推荐",
-  "from": "***",
+  "subject": "每周技术文章推荐",
+  "from": "xiongwilee <wileetest04@163.com>",
   "to": ["xiongwilee@foxmail.com"]
 }
