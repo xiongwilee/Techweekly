@@ -1,10 +1,5 @@
 'use strict';
 
-const fs = require("fs");
-const path = require("path");
-const http = require("http");
-const urlModel = require("url");
-
 const request = require("request");
 
 /**
