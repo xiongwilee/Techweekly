@@ -34,7 +34,7 @@ $ node index.js
 ```
 
 
-最后：
+**FYI:** 
 
 如果你需要定时发送邮件，推荐使用`crontab`:
 ```
@@ -69,7 +69,9 @@ Techweekly默认支持[fex](https://github.com/zenany/weekly/tree/master/softwar
 }
 ```
 
-**BTW:** 在`getLink`和`getContent`方法里，你可以直接使用[cheerio](https://github.com/cheeriojs/cheerio#cheerio)来解析DOM。
+**FYI:** 
+
+在`getLink`和`getContent`方法里，你可以直接使用[cheerio](https://github.com/cheeriojs/cheerio#cheerio)来解析DOM。
 
 ## 作者
 
