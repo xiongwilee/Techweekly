@@ -46,7 +46,7 @@ $ node index.js
 
 Techweekly默认支持[fex](https://github.com/zenany/weekly/tree/master/software/)和[75team](https://weekly.75team.com/)两个默认周报源，你可以根据自己的需求配置周报来源：
 ```
-  "源ID（可以配置任意字符）": {
+"源ID（可以配置任意字符）": {
     /**
      * 页面连接，可以是一个string, 也可以是function，如果是function则：
      * @return {String} 页面URL
@@ -66,7 +66,7 @@ Techweekly默认支持[fex](https://github.com/zenany/weekly/tree/master/softwar
      * @return {String}      文章主体部分的html
      */
     getContent: function(html) {}
-  }
+}
 ```
 
 **BTW:** 在`getLink`和`getContent`方法里，你可以直接使用[cheerio](https://github.com/cheeriojs/cheerio#cheerio)来解析DOM。
