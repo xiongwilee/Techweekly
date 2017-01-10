@@ -1,6 +1,6 @@
 # Techweekly
 
-基于Promise的每周技术文章推荐爬虫工具
+基于Nodejs Promise方案的技术周报（邮件推送）爬虫工具
 
 ## 快速入门
 
