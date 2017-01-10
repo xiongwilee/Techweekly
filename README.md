@@ -26,7 +26,8 @@ module.exports = {
   "to": ["收件人邮箱地址"]
 }
 ```
-或者，你也可以直接使用`config.mail.sample.js`，修改`config.mail.sample.js`为`config.mail.js`
+
+或者，你也可以直接使用默认的邮箱配置`config.mail.sample.js`，修改`config.mail.sample.js`为`config.mail.js`
 
 第三步，发送周报邮件：
 ```
