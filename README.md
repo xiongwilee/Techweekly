@@ -2,6 +2,8 @@
 
 高可配的技术周报邮件推送工具。
 
+![](http://img002.qufenqi.com/products/7c/ba/7cbac61933c8e8d21fe2e3915d4618e4.jpeg)
+
 ## 快速入门
 
 第一步，下载代码，安装依赖：
