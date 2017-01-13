@@ -72,6 +72,7 @@ function getContentPromise(article) {
 
   return new Promise((resolve, reject) => {
     request(contentLink, (error, res, body) => {
+      if (!body) { console.error(`抓取内容失败：${contentLink}`, error) }
       resolve(Object.assign(article, {
         articleBody: body
       }))
@@ -93,6 +94,7 @@ function allArticle(articleConfig) {
 
     promiseList.push(new Promise((resolve, reject) => {
       request(url, (error, res, body) => {
+        if (!body) { console.error(`抓取列表失败：${url}`, error) }
         resolve(Object.assign(article, {
           linkBody: body
         }));
