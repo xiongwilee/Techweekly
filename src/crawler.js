@@ -29,7 +29,10 @@ function crawler(articleConfig, callback) {
         if (!article.articleBody) return;
 
         let content = article.getContent(article.articleBody)
-        if (!content) return;
+        if (!content) { 
+          console.error(`解析文章内容失败：${article.contentLink}`)
+          return;
+        }
 
         contentList.push(Object.assign(article, {
           articleHtml: content
@@ -71,10 +74,11 @@ function getContentPromise(article) {
   if (!contentLink) return;
 
   return new Promise((resolve, reject) => {
-    request(contentLink, (error, res, body) => {
-      if (!body) { console.error(`抓取内容失败：${contentLink}`, error) }
+    request(contentLink, (err, res, body) => {
+      if (err) { console.error(`抓取内容失败：${contentLink}`, err) }
       resolve(Object.assign(article, {
-        articleBody: body
+        articleBody: body,
+        contentLink: contentLink
       }))
     })
   })
@@ -93,8 +97,8 @@ function allArticle(articleConfig) {
     let url = typeof article.url == 'function' ? article.url() : article.url;
 
     promiseList.push(new Promise((resolve, reject) => {
-      request(url, (error, res, body) => {
-        if (!body) { console.error(`抓取列表失败：${url}`, error) }
+      request(url, (err, res, body) => {
+        if (err) { console.error(`抓取列表失败：${url}`, err) }
         resolve(Object.assign(article, {
           linkBody: body
         }));

@@ -29,7 +29,13 @@ module.exports = {
 
         let $ = cheerio.load(html);
         let links = $('table.files .content a');
-        return curLink + $(links[links.length - 1]).attr('href');
+        for (let i = links.length; i > 0; i--) {
+          let url = $(links[i-1]).attr('href');
+
+          // 匹配这种类型的URL： /zenany/weekly/blob/master/software/2017/0220.md 
+          let urlReg = /.\/[\d]+\.md/g;
+          if (/.\/[\d]+\.md/g.test(url)) return curLink + url;
+        }
       } catch (err) {
         return;
       }
