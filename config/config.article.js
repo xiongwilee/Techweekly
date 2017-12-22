@@ -6,6 +6,7 @@
 'use strict';
 
 const cheerio = require("cheerio");
+const url_opera = require('url');
 
 module.exports = {
   "fex": {
@@ -30,11 +31,11 @@ module.exports = {
         let $ = cheerio.load(html);
         let links = $('table.files .content a');
         for (let i = links.length; i > 0; i--) {
-          let url = $(links[i-1]).attr('href');
+          let url = $(links[i - 1]).attr('href');
 
           // 匹配这种类型的URL： /zenany/weekly/blob/master/software/2017/0220.md 
           let urlReg = /.\/[\d]+\.md/g;
-          if (/.\/[\d]+\.md/g.test(url)) return curLink + url;
+          if (/.\/[\d]+\.md/g.test(url)) return url_opera.resolve(curLink , url);
         }
       } catch (err) {
         return;
@@ -48,11 +49,11 @@ module.exports = {
      */
     getContent: function(html) {
       let $ = cheerio.load(html);
-      try{
+      try {
         let html = $('.entry-content').html();
-        html = html.replace('<p>-- THE END --</p>','');
+        html = html.replace('<p>-- THE END --</p>', '');
         return html;
-      }catch(err){
+      } catch (err) {
         return;
       }
     }
@@ -63,18 +64,26 @@ module.exports = {
       try {
         let curLink = 'https://weekly.75team.com/';
 
+        let urlMatch = html.match(/href\=\'(issue\d+\.html)/);
+        if (urlMatch) {
+          return url_opera.resolve(curLink , urlMatch[1])
+        } else {
+          return;
+        }
+        /* 这个页面下的html注释写成了<!-- xxx --!> 导致cheerio不识别，改用正则
         let $ = cheerio.load(html);
         return curLink + $('.issue-list li:first-child a').attr('href');
+        */
       } catch (err) {
         return;
       }
     },
     getContent: function(html) {
       let $ = cheerio.load(html);
-      try{
+      try {
         let contentDom = $('#main #content>ul');
         return contentDom.html();
-      }catch(err){
+      } catch (err) {
         return;
       }
     }

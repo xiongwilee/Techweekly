@@ -53,11 +53,12 @@ function crawler(articleConfig, callback) {
 function getMailHtml(contentList) {
   let htmlContent = '';
   contentList.forEach((article) => {
-    htmlContent += article.articleHtml
+    htmlContent += `<p>▼ 来源: <a href="${article.contentLink}">${article.contentLink}</a></p>`;
+    htmlContent += article.articleHtml;
+    htmlContent +=`<br>`
   })
 
-  htmlContent += `<p>——————————————————————————————————————————————————</p>
-    <p>该技术周报由<a href='https://github.com/xiongwilee/Techweekly'>Techweekly</a>强力驱动</p>`;
+  htmlContent += `<hr/><p>该技术周报由<a href='https://github.com/xiongwilee/Techweekly'>Techweekly</a>强力驱动</p>`;
 
   return htmlContent
 }
